@@ -1,0 +1,55 @@
+/** @format */
+
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import { Text, TouchableOpacity, I18nManager } from "react-native";
+import TimeAgo from "@custom/react-native-timeago";
+import { ImageCache, ProductPrice, Rating } from "@components";
+import css from "./style";
+import {withTheme} from '@common'
+
+class ThreeColumn extends PureComponent {
+  static propTypes = {
+    post: PropTypes.object,
+    title: PropTypes.string,
+    type: PropTypes.string,
+    imageURL: PropTypes.string,
+    date: PropTypes.any,
+    viewPost: PropTypes.func,
+  };
+
+  render() {
+    const { viewPost, title, post, type, imageURL, date } = this.props;
+    const {
+      theme:{
+        colors:{
+          background, text
+        }
+      }
+    } = this.props
+
+    return (
+      <TouchableOpacity
+        activeOpacity={0.9}
+        style={css.panelThree}
+        onPress={viewPost}>
+        <ImageCache uri={imageURL} style={css.imagePanelThree} />
+
+        <Text numberOfLines={1} style={[css.nameThree, {color: text}]}>{title}</Text>
+        {typeof type !== "undefined" && (
+          <Text style={css.timeThree}>
+            <TimeAgo time={date} />{" "}
+          </Text>
+        )}
+        {typeof type === "undefined" && (
+          <ProductPrice product={post} hideDisCount />
+        )}
+        {typeof type === "undefined" && (
+          <Rating rating={post.average_rating} />
+        )}
+      </TouchableOpacity>
+    );
+  }
+}
+
+export default withTheme(ThreeColumn)

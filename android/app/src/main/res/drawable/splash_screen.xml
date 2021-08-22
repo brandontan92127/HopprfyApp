@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" 
+ android:background="@android:color/white"
+ android:layout_width="100dp"
+ android:layout_height="100dp">
+
+
+<!-- <item android:background="@android:color/white">   
+     <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/loader"
+        android:layout_centerInParent="true"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/hoppr"
+        android:visibility="visibl"
+        />
+     </item> -->
+    <item android:background="@android:color/white">
+      <bitmap             
+                android:layout_width="100dp"
+                  android:layout_height="100dp"         
+                  android:background="@android:color/white"              
+                  android:src="@drawable/hoppr_splash"/>
+     </item>
+    
+    <!-- <item android:background="@android:color/white"
+     android:layout_width="100dp"
+     android:layout_height="100dp">       
+            <bitmap             
+              android:layout_width="100dp"
+                android:layout_height="100dp"         
+                android:background="@android:color/white"
+                android:gravity="center"                
+                android:src="@drawable/hoppr"/>
+    </item> -->
+</layer-list>
+
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"     
+    android:background="@android:color/white">
+
+
+</LinearLayout> -->
+
